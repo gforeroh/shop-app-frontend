@@ -1,6 +1,6 @@
 <template>
   <div>
-    
+    Bienvenidos al sistema d einventarios de 
   </div>
 </template>
 

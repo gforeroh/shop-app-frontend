@@ -1,20 +1,31 @@
 <template>
   <div>
-    <b-table striped hover :items="items"></b-table>
+    <b-table striped hover :items="itemsAll" :fields="header" >
+      <template #cell(id)="data">
+        <!-- <router-link to="/order/{link}"  >{{ data.item.id }}{{link}}</router-link> -->
+        <router-link :to="{path: `/order/${data.item.id}`}"  >{{ data.value }}</router-link>
+        <!-- <router-link to="{ path: data.item.id }">{{data.item.id}}</router-link> -->
+      </template>
+    </b-table>
   </div>
 </template>
-
+<!-- data.item.link -->
 <script>
-  export default {
-    data() {
-      return {
-        items: [
-          { age: 40, first_name: 'Dickerson', last_name: 'Macdonald' },
-          { age: 21, first_name: 'Larsen', last_name: 'Shaw' },
-          { age: 89, first_name: 'Geneva', last_name: 'Wilson' },
-          { age: 38, first_name: 'Jami', last_name: 'Carney' }
-        ]
-      }
-    }
+export default {
+  props: {
+    items: Array,
+    fields: Array,
+  },
+  data() {
+    return {
+      header: this.fields,
+      itemsAll: this.items,
+    };
   }
+};
 </script>
+<style>
+  a {
+    text-decoration: none !important;
+  }
+</style>
