@@ -18,7 +18,7 @@ export default {
 </script>
 <style>
   img.logo {
-    width: 200px;
+    width: 150px;
     margin-left: -35px;
     margin-bottom: 15px;
   }

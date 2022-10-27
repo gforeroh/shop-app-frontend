@@ -34,4 +34,8 @@ nav a.router-link-exact-active {
 body{
   background-color: #f0f0f0 !important;
 }
+
+.text-left {
+  text-align: left !important;
+}
 </style>
