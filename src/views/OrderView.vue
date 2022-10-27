@@ -3,8 +3,6 @@
 <template>
   <div class="order">
     <h3>Pedido # {{ orderNum }}</h3>
-
-
     <div v-if="show">
       <div class="row mb-3">
         <div class="col-6">
@@ -15,7 +13,7 @@
           <h5>Documento: {{order.document}}</h5>
         </div>
       </div>
-
+      <router-link class="btn btn-primary" to="/order">Pedidos</router-link>
       <TableComponent :items="products" :fields="fields" />
     </div>
   </div>
